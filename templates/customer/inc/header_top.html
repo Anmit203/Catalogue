@@ -1,0 +1,24 @@
+{% load static %}
+{% if not user.is_authenticated %}
+<div class="header-top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="language-area">
+                            <ul>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-12">
+                        <div class="account-area text-right">
+                            <ul>
+                                <li><a href="/customer/seller">Sign Up as Seller</a></li>
+                                <li><a href="/customer/login">Sign in</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endif %}

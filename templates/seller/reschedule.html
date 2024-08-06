@@ -1,0 +1,121 @@
+{% extends 'seller/inc/layout.html' %}
+{% block content %}
+<div class="main-content">
+				<div class="main-content-inner">
+					<div class="breadcrumbs ace-save-state" id="breadcrumbs">
+						<ul class="breadcrumb">
+							<li>
+								<i class="ace-icon fa fa-home home-icon"></i>
+								<a href="#">Home</a>
+							</li>
+
+							<li>
+								<a href="#">Orders</a>
+							</li>
+							<li class="active">Order Details</li>
+						</ul><!-- /.breadcrumb -->
+
+						
+					</div>
+
+					<div class="page-content">
+					
+
+						<div class="page-header">
+							<h1>
+								Orders
+								<small>
+									<i class="ace-icon fa fa-angle-double-right"></i>
+									Check Order Items
+								</small>
+							</h1>
+						</div><!-- /.page-header -->
+
+						<div class="row">
+							<div class="col-xs-12">
+								
+							
+
+								<div class="row">
+									<div class="col-xs-12">
+										
+
+										<!-- <div class="clearfix">
+											<div class="pull-right tableTools-container"></div>
+										</div> -->
+										<div class="table-header">
+											Results for All Order Items
+										</div>
+
+										<!-- div.table-responsive -->
+
+										<!-- div.dataTables_borderWrap -->
+										<div>
+											<table id="dynamic-table" class="table table-striped table-bordered table-hover">
+												
+
+												<tbody>
+													<tr>
+														<td colspan="2"><h4>Billing Details</h4></td>
+													</tr>
+													<form method="post" action="/seller/order_reschedule/{{id1}}">
+														{% csrf_token %}
+													<tr>
+														<td>Date Slot</td>
+														<td>
+															<select id="ddate" name="ddate">
+			                                                  <option value="">Select Date</option>
+			                                                    <option value="13-03-2023">13-03-2023</option>
+			                                                    <option value="14-03-2023">14-03-2023</option>
+			                                                    <option value="15-03-2023">15-03-2023</option>
+			                                                    <option value="16-03-2023">16-03-2023</option>
+			                                                    <option value="17-03-2023">17-03-2023</option>
+			                                                    <option value="18-03-2023">18-03-2023</option>
+			                                                    <option value="19-03-2023">19-03-2023</option>
+			                                                </select>   
+														</td>
+													</tr>
+													<tr>
+														<td>Time Slot</td>
+														<td>
+															<select id="time" name="time">
+			                                                  <option value="">Select Time Slot</option>
+			                                                    <option value="9AM-10AM">9:00 to 10:00</option>
+			                                                    <option value="10AM-11AM">10:00 to 11:00</option>
+			                                                    <option value="11AM-12PM">11:00 to 12:00</option>
+			                                                    <option value="13PM-14PM">13:00 to 14:00</option>
+			                                                    <option value="16PM-17PM">16:00 to 17:00</option>
+			                                                    <option value="17PM-18PM">17:00 to 18:00</option>
+			                                                    <option value="18PM-19PM">18:00 to 19:00</option>
+			                                                    <option value="19PM-20PM">19:00 to 20:00</option>
+			                                                </select>      
+														</td>
+													</tr>
+													
+													<tr>
+														<td colspan="2" align="center">
+															<input type="submit" name="submit" value="Re-Schedule" class="form-control">
+														</td>
+													</tr>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+{% endblock %}
+
+{% block scripts %}
+
+
+<script type="text/javascript">
+			
+	$('#dynamic-table').DataTable();
+				
+</script>
+{% endblock %}
